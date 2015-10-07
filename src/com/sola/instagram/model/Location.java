@@ -2,7 +2,7 @@ package com.sola.instagram.model;
 import org.json.JSONObject;
 
 public class Location extends InstagramModel {
-	int id;
+	String id;
 	String name;
 	Double longitude;
 	Double latitude;
@@ -10,15 +10,15 @@ public class Location extends InstagramModel {
 	public Location(JSONObject obj, String accessToken) {
 		super(obj, accessToken);
 		setName(obj.optString("name"));
-		setId(obj.optInt("id"));
+		setId(obj.optString("id"));
 		setLatitude(obj.optDouble("latitude"));
 		setLongitude(obj.optDouble("longitude"));
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	protected void setId(int id) {
+	protected void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
